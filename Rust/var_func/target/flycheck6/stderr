@@ -1,0 +1,138 @@
+   0.056209036s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: false }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
+   0.056252924s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-d1a1ddabf79d9c4a/bin-src`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  16: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  17: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  20: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  21: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.336917442s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint: fingerprint error for sbi-rt v0.0.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("sbi_rt", ["lib"], "/home/misato/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sbi-rt-0.0.2/src/lib.rs", Edition2021) }
+   0.336956322s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/sbi-rt-c72cfe5a310d7911/lib-sbi_rt`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs:290:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  17: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  18: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  21: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  22: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.337596275s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: true }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
+   0.337617072s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-f9cc4aa15a38a385/test-bin-src`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/ops/function.rs:290:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  16: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  17: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:589:40
+  20: std::panicking::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:552:19
+  21: std::panic::catch_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+    Checking sbi-rt v0.0.2
+error: could not compile `sbi-rt` (lib) due to 43 previous errors

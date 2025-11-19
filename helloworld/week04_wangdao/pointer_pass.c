@@ -1,0 +1,15 @@
+#include<stdio.h>
+
+
+void compute(float a,float b,float *c,float *d); 
+void compute(float a,float b,float *c,float *d){
+    *c=a+b;
+    *d=a-b;
+}
+int main(){
+    float a, b, c, d;
+    scanf("%f%f", &a, &b);
+    compute(a, b, &c, &d);
+    printf("%g %g", c, d);
+    return 0;
+}
