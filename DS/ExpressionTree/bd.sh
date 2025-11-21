@@ -5,11 +5,8 @@ g++ \
 -g -O0 -Wall -Wextra -o \
 main \
 main.cpp \
-bfs.cpp \
-dfs.cpp \
-support_function.cpp \
-Dijkstra.cpp \
-Floyd.cpp
+def.cpp \
+sup.cpp
 
 if [ $? -eq 0 ]; then
     echo "编译成功！"

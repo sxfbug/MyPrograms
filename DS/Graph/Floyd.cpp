@@ -12,7 +12,7 @@ void floyd(Matrix_DirectedGraph_Weighted &x){
     {
         for (int j = 0; j < x.getsize(); j++)
         {
-            for (int k = 0; i < x.getsize(); k++)
+            for (int k = 0; k < x.getsize(); k++)
             {
                 //如果j->k不存在边，或存在的边大于引进节点i之后的j->i->k的边，则更新
                 if (dist[j][k]==0||(dist[j][k]>dist[j][i]+dist[i][k]))
@@ -29,7 +29,9 @@ void floyd(Matrix_DirectedGraph_Weighted &x){
         
     }
     //ending
+    cout<<"dist array: "<<endl;
     pri_vec(dist);
+    cout<<"path array: "<<endl;
     pri_vec(path);
 
     

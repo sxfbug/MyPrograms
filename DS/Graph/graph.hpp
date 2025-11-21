@@ -218,16 +218,26 @@ public:
 //bfs
 void BFS_full(Matrix_UndirectedGraph &x);
 void BFS_single(Matrix_UndirectedGraph &x,int start,vector<bool>&flag);
+
+
 //dfs
 void DFS_matrix_full(Matrix_UndirectedGraph &x,vector<bool> &flag);
 void DFS_matrix(Matrix_UndirectedGraph &x,int start,vector<bool> &flag);
+
+
 //bfs shortest path
 void bfs_path(Matrix_UndirectedGraph &x,vector<bool> &flag, vector<int> &path
 ,vector<int> &prev,int start);
 void bfs_path_full(Matrix_UndirectedGraph &x);
+
+
 //dijkstra
 void dijk(Matrix_DirectedGraph_Weighted &x,int start);
 int find_min(vector<int> &x,vector<bool> &flag);
+
+//floyd
+void floyd(Matrix_DirectedGraph_Weighted &x);
+
 
 //辅助函数声明
 void pri_vec(vector<bool> &x);

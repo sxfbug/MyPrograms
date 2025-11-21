@@ -35,7 +35,7 @@ void pri_vec(vector<vector<int>> &x){
     {
         for (int j = 0; j < x.size(); j++)
         {
-            cout<<"x["<<i<<"]["<<j<<"]= "<<x[i][j]<<" ";
+            cout<<"x["<<i<<"]["<<j<<"]= "<<x[i][j]<<"\t";
         }
         cout<<endl;
         

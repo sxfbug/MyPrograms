@@ -23,7 +23,16 @@ int main(){
     y.AddEdge(3,5,2);
     y.AddEdge(3,4,10);
     y.AddEdge(5,4,5);
-    dijk(y,1);
+    //dijk(y,1);
+
+    Matrix_DirectedGraph_Weighted z(3);
+    z.AddEdge(0,1,6);
+    z.AddEdge(0,2,13);
+    z.AddEdge(1,0,10);
+    z.AddEdge(1,2,4);
+    z.AddEdge(2,0,5);
+    floyd(z);
+    
 
     
     // Matrix_UndirectedGraph x(9);
