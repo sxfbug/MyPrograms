@@ -32,7 +32,7 @@ class ExpressionTree{
     //从中缀表达式转换为树,从字符串构造树，递归函数
     //参数：表达式  string
     //返回值：树的结点指针TreeLink
-    TreeLink build_child_tree(string x);
+    TreeLink exchange_mid_to_tree(string x);
 
 
     //后序遍历并进行求值

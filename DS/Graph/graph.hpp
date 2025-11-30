@@ -4,6 +4,9 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<stack>
+#include<tuple>
+#include<optional>
 
 using namespace std;
 
@@ -42,10 +45,17 @@ class Matrix_DirectedGraph_Weighted{
     private:
     int size;
     vector<vector<int>> graph;
+    //入度vector
+    vector<int> in_degree;
+    //出度vector
+    vector<int> out_degree;
 
     public:
     //构造函数
-    Matrix_DirectedGraph_Weighted(int x):size(x),graph(x,vector<int>(x,0)){};
+    Matrix_DirectedGraph_Weighted(int x):
+    size(x),graph(x,vector<int>(x,0)),in_degree(x,0),out_degree(x,0){};
+
+    //get function
     //获取元素数量
     int getsize(){
         return size;
@@ -54,11 +64,26 @@ class Matrix_DirectedGraph_Weighted{
     vector<vector<int>>& getgraph(){
         return graph;
     }
-    //添加从x到y的带权边
-    void AddEdge(int x,int y,int weight){
-        graph[x][y]=weight;
+
+    //获取入度数组
+    vector<int>& get_indegree(){
+        return in_degree;
     }
 
+    //获取出度数组
+    vector<int>& get_outdegree(){
+        return out_degree;
+    }
+
+    //添加从x到y的带权边
+    //如果不添加参数，则默认权重为1
+    void AddEdge(int x,int y,int weight=1){
+        graph[x][y]=weight;
+        in_degree[y]+=1;
+        out_degree[x]+=1;
+    }
+
+    
     //访问结点
     void visit(int x){
         cout<<"结点:"<<x<<"\t";
@@ -67,6 +92,12 @@ class Matrix_DirectedGraph_Weighted{
      
     
 };
+
+
+
+
+
+
 
 //有向图Directed graph 邻接表
 class List_Graph
@@ -214,7 +245,7 @@ public:
 
 
 
-//函数声明
+//主要函数声明
 //bfs
 void BFS_full(Matrix_UndirectedGraph &x);
 void BFS_single(Matrix_UndirectedGraph &x,int start,vector<bool>&flag);
@@ -238,9 +269,88 @@ int find_min(vector<int> &x,vector<bool> &flag);
 //floyd
 void floyd(Matrix_DirectedGraph_Weighted &x);
 
+//Topological Sorting
+vector<int> Topo(Matrix_DirectedGraph_Weighted &x);
+vector<int> Inverse_topo(Matrix_DirectedGraph_Weighted &x);
+vector<int>  Inverse_topo_DFS_full(Matrix_DirectedGraph_Weighted &x);
+void Inverse_topo_DFS(Matrix_DirectedGraph_Weighted &x,int curr,vector<int> &q,vector<int> &state,bool &has_cycle);
+
+//Critical Path
+vector<int> cri_path(Matrix_DirectedGraph_Weighted &x);
+
+
 
 //辅助函数声明
 void pri_vec(vector<bool> &x);
 void pri_vec(vector<int> &x);
 void pri_vec(vector<vector<int>> &x);
+void pri_queue(queue<int> x);
+void pri_vec(vector<tuple<int,int,int>> &x);
+
+
+//模板函数声明+定义（必须定义在头文件里）
+
+//声明
+template<typename T>
+T max(T a,T b);
+
+template<typename T>
+T min(T a,T b);
+
+template<typename T>
+T max(vector<T> &x);
+
+template<typename T>
+T min(vector<T> &x);
+
+
+//模板函数定义
+//compare
+template<typename T>
+T max(T a,T b)
+{
+    return a>b ? a : b;
+}
+
+template<typename T>
+T min(T a,T b)
+{
+    return a<b ? a : b;
+}
+
+
+//searching in vector
+template<typename T>
+T max(vector<T> &x)
+{
+    if (x.empty())
+    {
+        cout<<"searching: x is empty vector.";
+        //return std::nullopt;
+    }
+    
+    T max=x[0];
+    for (int i = 0; i < x.size(); i++)
+    {
+        max= max>x[i] ? max : x[i];
+    }
+    return max;
+}
+
+template<typename T>
+T min(vector<T> &x)
+{
+    if (x.empty())
+    {
+        cout<<"searching: x is empty vector.";
+        //return std::nullopt;
+    }
+    T min=x[0];
+    for (int i = 0; i < x.size(); i++)
+    {
+        min= min<x[i] ? min : x[i];
+    }
+    return min;
+}
+
 #endif

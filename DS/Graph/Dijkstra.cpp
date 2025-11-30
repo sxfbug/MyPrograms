@@ -1,6 +1,3 @@
-#include<iostream>
-#include<vector>
-#include<queue>
 #include"graph.hpp"
 
 void dijk(Matrix_DirectedGraph_Weighted &x,int start){

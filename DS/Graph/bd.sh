@@ -9,7 +9,9 @@ bfs.cpp \
 dfs.cpp \
 support_function.cpp \
 Dijkstra.cpp \
-Floyd.cpp
+Floyd.cpp \
+TopologicalSorting.cpp \
+CriticalPath.cpp
 
 if [ $? -eq 0 ]; then
     echo "编译成功！"

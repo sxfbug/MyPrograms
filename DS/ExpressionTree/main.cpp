@@ -16,7 +16,7 @@ int main(){
     
     while (cin >> b)
     {
-        x.root=x.build_child_tree(b);
+        x.root=x.exchange_mid_to_tree(b);
 
         level_visit(x.root);
         cout<<endl;

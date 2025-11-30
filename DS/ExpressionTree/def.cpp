@@ -16,23 +16,34 @@
 //返回值：树的结点指针TreeLink
 
 
-ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
+ExpressionTree::TreeLink ExpressionTree::exchange_mid_to_tree(string x){
     
-    //递归结束，子串分析完毕
-    //是否多余了？
-    // if (x.length()==0)
-    // {
-    //     return nullptr;
-    // }
+    
     ExpressionTree::TreeLink node=new ExpressionTree::TreeNode("null");
 
 
     //遍历检查是否没有运算符
     //不是符号，就是操作数，把数存到结点里
     //数一定是叶子结点
+    //并且检查括号，如果括号位于首尾两端，则去除
     bool is_oprand=false;
+    int pos_left_parenthese=5,pos_right_parenthese=5;
     for (int i = 0; i < x.size(); i++)
     {
+        //check parenthese
+        if (x[i]=='(')
+        {
+            pos_left_parenthese=i;
+            continue;
+        }
+
+        if (x[i]==')')
+        {
+            pos_right_parenthese=i;
+            continue;
+        }
+        
+        //check oprands
         if (x[i]=='+' || x[i]=='*'||x[i]=='-'||x[i]=='/')
         {
             is_oprand=true;
@@ -40,6 +51,13 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
         }
         
     }
+    
+    //检查并删除括号
+    if (pos_left_parenthese==0 && pos_right_parenthese==x.size()-1)
+    {
+        x=x.substr(pos_left_parenthese+1,x.size()-1);
+    }
+    
     //如果没有，就直接添加到结点
     if (!is_oprand)
     {
@@ -63,8 +81,8 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
             
             //根节点
             node->data="+";
-            node->lchild=build_child_tree(x.substr(0,pos));
-            node->rchild=build_child_tree(x.substr(pos+1,x.size()));
+            node->lchild=exchange_mid_to_tree(x.substr(0,pos));
+            node->rchild=exchange_mid_to_tree(x.substr(pos+1,x.size()));
             return node;
         }
         
@@ -73,8 +91,8 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
             
             //根节点
             node->data="-";
-            node->lchild=build_child_tree(x.substr(0,pos));
-            node->rchild=build_child_tree(x.substr(pos+1,x.size()));
+            node->lchild=exchange_mid_to_tree(x.substr(0,pos));
+            node->rchild=exchange_mid_to_tree(x.substr(pos+1,x.size()));
             return node;
         }
         
@@ -90,8 +108,8 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
         {
             pos=i;
             node->data="*";
-            node->lchild=build_child_tree(x.substr(0,pos));
-            node->rchild=build_child_tree(x.substr(pos+1,x.size()));
+            node->lchild=exchange_mid_to_tree(x.substr(0,pos));
+            node->rchild=exchange_mid_to_tree(x.substr(pos+1,x.size()));
             return node;
         }
 
@@ -99,8 +117,8 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
         {
             pos=i;
             node->data="/";
-            node->lchild=build_child_tree(x.substr(0,pos));
-            node->rchild=build_child_tree(x.substr(pos+1,x.size()));
+            node->lchild=exchange_mid_to_tree(x.substr(0,pos));
+            node->rchild=exchange_mid_to_tree(x.substr(pos+1,x.size()));
             return node;
         }
     }
@@ -110,7 +128,9 @@ ExpressionTree::TreeLink ExpressionTree::build_child_tree(string x){
 }
 
 
-
+//通过后序遍历表达式树，进行结果的计算
+//参数：表达式树的引用
+//返回值：结果 double
 double ExpressionTree::calculate(ExpressionTree::TreeLink &x){
         //用一个栈辅助
         //操作数压栈，运算符则弹出两个操作数，运算后再把结果入栈
