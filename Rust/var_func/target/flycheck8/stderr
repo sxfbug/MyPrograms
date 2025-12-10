@@ -1,5 +1,5 @@
-   0.045580741s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: false }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
-   0.045660070s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-d1a1ddabf79d9c4a/bin-src`
+   0.116216226s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: false }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
+   0.116269485s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-d1a1ddabf79d9c4a/bin-src`
 
 Caused by:
     No such file or directory (os error 2)
@@ -43,8 +43,8 @@ Stack backtrace:
   25: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:360:3
   26: <unknown>
-   0.270308415s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint: fingerprint error for sbi-rt v0.0.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("sbi_rt", ["lib"], "/home/misato/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sbi-rt-0.0.2/src/lib.rs", Edition2021) }
-   0.270389568s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/sbi-rt-c72cfe5a310d7911/lib-sbi_rt`
+   0.785832433s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint: fingerprint error for sbi-rt v0.0.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("sbi_rt", ["lib"], "/home/misato/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sbi-rt-0.0.2/src/lib.rs", Edition2021) }
+   0.785856868s  INFO prepare_target{force=false package_id=sbi-rt v0.0.2 target="sbi_rt"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/sbi-rt-c72cfe5a310d7911/lib-sbi_rt`
 
 Caused by:
     No such file or directory (os error 2)
@@ -89,8 +89,8 @@ Stack backtrace:
   26: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:360:3
   27: <unknown>
-   0.292397338s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: true }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
-   0.292437098s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-f9cc4aa15a38a385/test-bin-src`
+   0.795920110s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint: fingerprint error for src v0.1.0 (/home/misato/My/programs/Rust/var_func)/Check { test: true }/TargetInner { name: "src", doc: true, ..: with_path("/home/misato/My/programs/Rust/var_func/src/main.rs", Edition2024) }
+   0.795954183s  INFO prepare_target{force=false package_id=src v0.1.0 (/home/misato/My/programs/Rust/var_func) target="src"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/misato/My/programs/Rust/var_func/target/debug/.fingerprint/src-f9cc4aa15a38a385/test-bin-src`
 
 Caused by:
     No such file or directory (os error 2)

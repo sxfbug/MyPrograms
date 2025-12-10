@@ -137,18 +137,21 @@ vector<int> cri_path(Matrix_DirectedGraph_Weighted &x)
     cout<<"el:";
     pri_vec(el);
 
-    //计算ee和el的差值，从而得出关键路径
+    //计算ee和el的差值，从而得出所有关键活动
+    //context: 边权值，弧头结点，弧尾结点
+    vector<tuple<int,int,int>> critical_edge;
     for (int i = 0; i < ee.size(); i++)
     {
-        if (get<0>(ee[i])-get<0>(el[i])==0)
+        if (get<0>(ee[i])==get<0>(el[i]))
         {
-            //把弧头指向的结点添加进来
-            final.push_back(get<1>(ee[i]));
-            //也添加弧尾，后面再去重
-            final.push_back(get<2>(ee[i]));
+            int weight=graph[get<1>(ee[i])][get<2>(ee[i])];
+            tuple<int,int,int> ce(weight,get<1>(ee[i]),get<2>(ee[i]));
+            critical_edge.push_back(ce);
         }
-        
     }
+    
+    //用dfs找到所有关键路径，再比较长度
+    vector<vector<tuple<int,int,int>>> all_ce;
     
     vector<int> unique_final;
     
