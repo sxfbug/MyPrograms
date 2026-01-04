@@ -18,6 +18,7 @@ typedef struct BSTNode{
     BSTLink rchild;
 };
 
+//AVL
 struct AVLNode;
 typedef AVLNode* AVLLink;
 
@@ -27,6 +28,18 @@ struct AVLNode{
     AVLLink rchild;
     int balanced;
     int height;//树高
+};
+
+//RBT
+enum Color {RED,BLACK};
+struct RBTNode;
+typedef RBTNode* RBTLink;
+struct RBTNode{
+    int data;
+    Color color;
+    RBTLink lchild;
+    RBTLink rchild;
+    RBTLink parent;
 };
 
 
@@ -43,6 +56,22 @@ void BST_delete(BSTLink &x,int t);
 //AVL.cpp
 AVLLink AVL_build(AVLLink &x,int t);
 AVLLink AVL_update(AVLLink &x);
+AVLLink AVL_adjust(AVLLink &x);
+AVLLink AVL_search(AVLLink &x, int t);
+AVLLink AVL_delete(AVLLink &x,int t);
+
+AVLLink RR(AVLLink &x);
+AVLLink LL(AVLLink &x);
+
+//RBT.cpp
+RBTLink RBT_build(RBTLink &root,RBTLink pre,int t);
+RBTLink RBT_adjust(RBTLink &root);
+RBTLink redparent_blackcousin(RBTLink &gp,RBTLink &pp,RBTLink &son);
+RBTLink RBT_ad2(RBTLink &gp);
+
+RBTLink LL(RBTLink &root);
+RBTLink RR(RBTLink &root);
+
 
 
 
@@ -59,6 +88,7 @@ void layerorder(AVLLink &x);
 
 BSTLink spe_midorder(BSTLink &x);
 BSTLink spe_backorder(BSTLink &x,BSTLink &pre);
+AVLLink spe_inorder(AVLLink x,AVLLink &pre);
 
 
 void pri_vec(vector<bool> &a);

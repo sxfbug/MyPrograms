@@ -199,6 +199,22 @@ BSTLink spe_backorder(BSTLink &x,BSTLink &pre)
     }
 }
 
+//找中序后继用的，返回最左的叶子结点
+AVLLink spe_inorder(AVLLink x,AVLLink &pre)
+{
+    if (x==nullptr)
+    {
+        return nullptr;
+    }
+    
+    while (x->lchild)
+    {
+        pre=x;
+        x=x->lchild;
+    }
+    return x;
+    
+}
 
 //遍历vector
 void pri_vec(vector<bool> &a)

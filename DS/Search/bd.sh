@@ -4,13 +4,17 @@ g++ \
 -std=c++11 \
 -g -O0 -Wall -Wextra -o \
 main \
-main.cpp \
+runtest.cpp \
+RBT.cpp \
+RBT_test.cpp \
 sup.cpp \
-BST.cpp \
-AVL.cpp
+
+
+# BST.cpp \
+# AVL.cpp \
 # Binary.cpp \
 # Sequence.cpp \
-
+# test_avl_byDS.cpp
 
 if [ $? -eq 0 ]; then
     echo "编译成功！"
